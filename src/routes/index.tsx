@@ -19,9 +19,9 @@ import {
   AlertTriangle,
 } from "lucide-react";
 
-import dashboardAsset from "@/assets/pdv-dashboard.png.asset.json";
-import estoqueAsset from "@/assets/pdv-estoque.png.asset.json";
-import auditoriaAsset from "@/assets/pdv-auditoria.png.asset.json";
+import dashboardAsset from "@/assets/pdv-dashboard.jpg";
+import estoqueAsset from "@/assets/pdv-estoque.jpg";
+import auditoriaAsset from "@/assets/pdv-auditoria.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -187,7 +187,7 @@ function HeroMockup() {
             <span className="ml-3 text-xs text-muted-foreground font-mono">teltech.app/dashboard</span>
           </div>
           <img
-            src={dashboardAsset.url}
+            src={dashboardAsset}
             alt="Dashboard do PDV Teltech mostrando vendas em tempo real"
             className="w-full block"
             loading="eager"
@@ -332,14 +332,14 @@ function Chapter2Emerge() {
         <Reveal delay={0.2}>
           <div className="relative">
             <div className="glass rounded-2xl p-2 glow-blue">
-              <img src={dashboardAsset.url} alt="Visão geral do PDV Teltech" className="rounded-xl w-full" loading="lazy" />
+              <img src={dashboardAsset} alt="Visão geral do PDV Teltech" className="rounded-xl w-full" loading="lazy" />
             </div>
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -bottom-8 -left-6 hidden md:block glass rounded-xl p-3 w-56"
             >
-              <img src={estoqueAsset.url} alt="Controle de estoque" className="rounded-lg" loading="lazy" />
+              <img src={estoqueAsset} alt="Controle de estoque" className="rounded-lg" loading="lazy" />
             </motion.div>
           </div>
         </Reveal>
@@ -471,7 +471,7 @@ function Chapter4Stock() {
       <div className="grid lg:grid-cols-2 gap-12 items-center mt-6">
         <Reveal>
           <div className="glass rounded-2xl p-2">
-            <img src={estoqueAsset.url} alt="Controle de estoque do PDV Teltech" className="rounded-xl w-full" loading="lazy" />
+            <img src={estoqueAsset} alt="Controle de estoque do PDV Teltech" className="rounded-xl w-full" loading="lazy" />
           </div>
         </Reveal>
         <div>
@@ -553,7 +553,7 @@ function Chapter5Cash() {
         </div>
         <Reveal delay={0.15}>
           <div className="glass rounded-2xl p-2 glow-blue">
-            <img src={auditoriaAsset.url} alt="Auditoria e histórico de caixas" className="rounded-xl w-full" loading="lazy" />
+            <img src={auditoriaAsset} alt="Auditoria e histórico de caixas" className="rounded-xl w-full" loading="lazy" />
           </div>
         </Reveal>
       </div>
@@ -707,7 +707,7 @@ function Chapter8Dashboard() {
       <Reveal delay={0.2}>
         <div className="mt-14 relative">
           <div className="glass rounded-2xl p-2 glow-blue">
-            <img src={dashboardAsset.url} alt="Dashboard executivo Teltech" className="rounded-xl w-full" loading="lazy" />
+            <img src={dashboardAsset} alt="Dashboard executivo Teltech" className="rounded-xl w-full" loading="lazy" />
           </div>
           <div className="mt-6 flex flex-wrap gap-2 justify-center">
             {indicators.map((i) => (
