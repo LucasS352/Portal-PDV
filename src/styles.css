@@ -125,6 +125,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  padding-bottom: 0.1em;
 }
 
 @utility text-gradient-blue {

@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  site-pdv:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: site_pdv_teltech
+    restart: unless-stopped
+    ports:
+      - "3525:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOST=0.0.0.0
