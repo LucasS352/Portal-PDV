@@ -1,17 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
-  <rect width="500" height="500" rx="100" fill="#0A0B10"/>
-  <g fill="#2563EB">
-    <!-- Top bar -->
-    <path d="M 130 120 L 370 120 L 330 165 C 290 165 240 165 200 165 Z" />
-    <!-- Middle arc -->
-    <path d="M 185 220 L 250 165 L 340 165 C 290 205 240 240 215 270 Z" fill="#2563EB"/>
-    <!-- Main sweeping T / 7 mark -->
-    <path d="M 280 120 H 370 C 310 180 240 260 205 400 C 215 330 250 270 310 230 L 235 270 Z" fill="#3B82F6"/>
-  </g>
-  <g fill="#2563EB">
-    <!-- Clean high-precision vector silhouette -->
-    <path d="M 130 120 H 370 L 320 165 H 200 Z" fill="#2563EB" />
-    <path d="M 185 225 L 250 165 H 330 L 210 270 Z" fill="#3B82F6" />
-    <path d="M 280 165 C 250 210 215 280 195 390 C 210 320 250 260 305 215 L 235 270 Z" fill="#60A5FA" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <rect width="100" height="100" rx="22" fill="#0D0E15"/>
+  <g>
+    <!-- Top horizontal bar -->
+    <polygon points="12,14 88,14 74,31 30,31" fill="#3B82F6" />
+    <!-- Middle sloped bar -->
+    <polygon points="26,39 44,31 72,31 37,55" fill="#60A5FA" />
+    <!-- Main sweeping curved tail -->
+    <path d="M 47 31 C 39 50 34 72 38 95 C 41 81 51 66 69 58 L 54 68 C 61 61 67 53 68 46 Z" fill="#93C5FD" />
   </g>
 </svg>

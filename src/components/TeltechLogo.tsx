@@ -1,8 +1,8 @@
 import React from "react";
 
 /**
- * Teltech logo – stylized "T" mark.
- * High-precision vector traced from the official Teltech brand logo.
+ * Official Teltech brand mark logo.
+ * Traced with precision to match the brand mark proportions at any scale.
  */
 export function TeltechLogo({
   className = "",
@@ -15,7 +15,7 @@ export function TeltechLogo({
 }) {
   return (
     <svg
-      viewBox="0 0 500 500"
+      viewBox="0 0 100 100"
       width={size}
       height={size}
       fill={color}
@@ -23,12 +23,14 @@ export function TeltechLogo({
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Teltech Logo"
     >
-      {/* Top bar */}
-      <path d="M 140 120 H 360 L 315 170 H 205 Z" />
-      {/* Middle swoosh */}
-      <path d="M 185 225 L 250 170 H 335 L 210 275 Z" />
-      {/* Bottom sweeping tail */}
-      <path d="M 285 170 Q 240 230 195 390 Q 215 310 305 215 L 240 270 Z" />
+      <g>
+        {/* Top horizontal bar */}
+        <polygon points="12,14 88,14 74,31 30,31" />
+        {/* Middle sloped bar */}
+        <polygon points="26,39 44,31 72,31 37,55" />
+        {/* Main sweeping curved 7 tail */}
+        <path d="M 47 31 C 39 50 34 72 38 95 C 41 81 51 66 69 58 L 54 68 C 61 61 67 53 68 46 Z" />
+      </g>
     </svg>
   );
 }

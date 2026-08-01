@@ -180,7 +180,7 @@ function Nav({ onOpenDemo }: { onOpenDemo: () => void }) {
       <div className="glass rounded-full flex items-center justify-between pl-5 pr-2 py-2">
         <a href="#top" className="flex items-center gap-2">
           <span className="grid place-items-center w-7 h-7 rounded-md bg-[var(--gradient-primary)] shadow-[0_8px_24px_-8px_oklch(0.62_0.24_264/0.7)]">
-            <TeltechLogo size={14} color="white" />
+            <TeltechLogo size={18} color="white" />
           </span>
           <span className="font-bold tracking-tight">Teltech</span>
           <span className="text-muted-foreground text-sm hidden sm:inline">PDV</span>
@@ -1019,7 +1019,7 @@ function FinalCTA({ onOpenDemo }: { onOpenDemo: () => void }) {
       <div className="max-w-5xl mx-auto text-center w-full">
         <Reveal>
           <span className="chip mb-6">
-            <TeltechLogo size={12} color="oklch(0.78 0.18 258)" />
+            <TeltechLogo size={15} color="oklch(0.78 0.18 258)" />
             Comece agora
           </span>
         </Reveal>
@@ -1069,7 +1069,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
         <div className="flex items-center gap-2">
           <span className="grid place-items-center w-6 h-6 rounded-md bg-[var(--gradient-primary)]">
-            <TeltechLogo size={11} color="white" />
+            <TeltechLogo size={16} color="white" />
           </span>
           <span className="font-semibold text-foreground">Teltech</span>
           <span>· PDV para o varejo moderno</span>
