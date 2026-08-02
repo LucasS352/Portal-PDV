@@ -1,7 +1,10 @@
 node_modules
 .git
 .gitignore
-.output
+.lovable
+*.md
 dist
-.tanstack
-*.log
+.dockerignore
+docker-compose.yml
+.prettierrc
+.prettierignore
