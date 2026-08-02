@@ -15,7 +15,7 @@ FROM node:22-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
-ENV PORT=3529
+ENV PORT=3535
 ENV HOST=0.0.0.0
 
 COPY --from=builder /app/package.json ./
@@ -24,6 +24,6 @@ COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/src ./src
 COPY --from=builder /app/vite.config.ts ./
 
-EXPOSE 3529
+EXPOSE 3535
 
-CMD ["npx", "vite", "preview", "--host", "0.0.0.0", "--port", "3529"]
+CMD ["npx", "vite", "preview", "--host", "0.0.0.0", "--port", "3535"]
