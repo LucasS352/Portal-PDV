@@ -105,7 +105,7 @@ export const Route = createFileRoute("/")({
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Teltech",
-      "url": "https://pdv.smartek.com.br",
+      "url": "https://adegapdv.teltech.com.br",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+55-14-99760-3870",
@@ -133,7 +133,7 @@ export const Route = createFileRoute("/")({
           content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
         },
         { property: "og:type", content: "website" },
-        { property: "og:url", content: "https://pdv.smartek.com.br/" },
+        { property: "og:url", content: "https://adegapdv.teltech.com.br/" },
         { property: "og:title", content: "Teltech PDV — Sistema para Adega, Disk Bebidas e Distribuidora" },
         {
           property: "og:description",
@@ -151,7 +151,7 @@ export const Route = createFileRoute("/")({
       ],
       links: [
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-        { rel: "canonical", href: "https://pdv.smartek.com.br/" },
+        { rel: "canonical", href: "https://adegapdv.teltech.com.br/" },
       ],
       scripts: [
         {

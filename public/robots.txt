@@ -25,4 +25,4 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
-Sitemap: https://pdv.smartek.com.br/sitemap.xml
+Sitemap: https://adegapdv.teltech.com.br/sitemap.xml
