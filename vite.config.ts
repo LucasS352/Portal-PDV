@@ -6,9 +6,13 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 
 export default defineConfig({
   preview: {
+    host: true,
+    port: 3535,
     allowedHosts: true,
   },
   server: {
+    host: true,
+    port: 3535,
     allowedHosts: true,
   },
   plugins: [
