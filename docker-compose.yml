@@ -8,7 +8,7 @@ services:
     container_name: site_pdv_teltech
     restart: unless-stopped
     ports:
-      - "3525:3000"
+      - "3529:3000"
     environment:
       - NODE_ENV=production
       - PORT=3000
