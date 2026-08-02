@@ -5,6 +5,12 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 
 export default defineConfig({
+  preview: {
+    allowedHosts: true,
+  },
+  server: {
+    allowedHosts: true,
+  },
   plugins: [
     tanstackStart({
       server: { entry: "server" },
