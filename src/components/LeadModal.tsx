@@ -8,7 +8,7 @@ interface LeadModalProps {
 }
 
 const WHATSAPP_NUMBER = "5514997603870";
-const DEMO_URL = "https://pdv.smartek.com.br/login";
+const DEMO_URL = "https://pdvdemo.teltech.com.br/demo";
 
 export function LeadModal({ isOpen, onOpenChange }: LeadModalProps) {
   const [nome, setNome] = useState("");
@@ -29,7 +29,7 @@ export function LeadModal({ isOpen, onOpenChange }: LeadModalProps) {
     setWhatsapp(formatPhone(e.target.value));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const cleanPhone = whatsapp.replace(/\D/g, "");
 
@@ -45,23 +45,36 @@ export function LeadModal({ isOpen, onOpenChange }: LeadModalProps) {
     setError("");
     setIsSubmitted(true);
 
+    let redirectUrl = "https://pdvdemo.teltech.com.br/demo";
+
     try {
-      const leads = JSON.parse(localStorage.getItem("pdv_leads") || "[]");
-      leads.push({ nome, whatsapp, date: new Date().toISOString() });
-      localStorage.setItem("pdv_leads", JSON.stringify(leads));
-    } catch {
-      // ignore
+      const isLocal = window.location.hostname.includes("localhost");
+      const apiHost = isLocal ? "http://localhost:3524" : "https://pdvdemo.teltech.com.br";
+      const frontendHost = isLocal ? "http://localhost:3525" : "https://pdvdemo.teltech.com.br";
+
+      const res = await fetch(`${apiHost}/api/demo/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: nome.trim(), whatsapp: cleanPhone }),
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        if (data.access_token && data.user) {
+          const tokenStr = data.access_token;
+          const userStr = encodeURIComponent(JSON.stringify(data.user));
+          const opStr = data.operator ? encodeURIComponent(JSON.stringify(data.operator)) : "";
+          const regStr = data.cashRegister ? encodeURIComponent(JSON.stringify(data.cashRegister)) : "";
+
+          redirectUrl = `${frontendHost}/demo?token=${tokenStr}&user=${userStr}&operator=${opStr}&register=${regStr}`;
+        }
+      }
+    } catch (e) {
+      console.error("Erro ao registrar lead na API demo", e);
     }
 
-    const message = encodeURIComponent(
-      `Olá! Meu nome é *${nome.trim()}* (${whatsapp.trim()}). Acabei de solicitar o acesso de teste ao PDV Teltech!`
-    );
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-    window.open(whatsappUrl, "_blank");
-
-    setTimeout(() => {
-      window.location.href = DEMO_URL;
-    }, 2000);
+    // Redireciona diretamente para o ambiente de demonstração logado
+    window.location.href = redirectUrl;
   };
 
   const handleClose = () => {
